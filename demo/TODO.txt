@@ -1,0 +1,14 @@
+- cerinte PAJ
+- securitate spring
+- auth 2.0
+- refactorizare coding style ctr L
+- toate controllerele sa returneze DTO-uri
+- restructurare teste @Before instantieri, etc.
+
+- The project should have the minimum complexity of the banking application presented in the course (what you have received and what you need to implement)
+- Using collections (generate reports) - 15 points                             X
+- Multi-threading - 20 points                                                  X
+- Using lambdas/references to methods - 15 points                              X
+- Using streams - 15 points                                                    X
+- Code quality - 15 points                                                     X
+- Unit tests covering at least 75% of the code - 20 points
