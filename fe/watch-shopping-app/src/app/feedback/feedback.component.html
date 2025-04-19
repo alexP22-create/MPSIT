@@ -1,0 +1,25 @@
+<!-- feedback.component.html -->
+<div class="upper-bar">
+    <div class="brand">Online Shopping Platform For Watches</div>
+    <button>Go Back</button>
+  </div>
+
+<div class="feedback-container">
+    <label for="feedbackInput">My Feedback:</label>
+    <textarea id="feedbackInput" [(ngModel)]="myFeedback" rows="4"></textarea>
+  
+    <button (click)="sendFeedback()" class="send-button">Send Feedback</button>
+  </div>
+  
+  <!-- "See Feedback" button outside the container -->
+  <div class="see-feedback-container">
+    <label>All given feedback:</label>
+    <button (click)="seeFeedback()" class="see-button">See Feedback</button>
+    <!-- Display feedbacks -->
+    <div *ngIf="feedbackList.length > 0">
+        <h3>Feedbacks:</h3>
+        <ul>
+        <li *ngFor="let feedback of feedbackList">{{ feedback }}</li>
+        </ul>
+    </div>
+</div>  

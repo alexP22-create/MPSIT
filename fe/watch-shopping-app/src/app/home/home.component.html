@@ -1,0 +1,23 @@
+<div class="upper-bar">
+    <div class="brand">Online Shopping Platform For Watches</div>
+    <button>Home</button>
+    <button (click)="goToUser()">User</button>
+    <button (click)="goToFeedback()">Feedback</button>
+    <button (click)="goToCart()">Cart</button>
+    <!-- <button *ngIf="currentUser && currentUser.username == 'admin'" 
+        (click)="addProduct()">Add Product</button> -->
+        <button (click)="goToAddProduct()">Add Product</button>
+    <button (click)="goToLogin()">Log Out</button>
+  </div>
+  
+  <div class="watch-list">
+    <div *ngFor="let watch of watches" class="watch-entry">
+      <div class="watch-section">
+        <img [src]="watch.imageUrl" alt="{{ watch.name }} image">
+        <div class="buttons">
+          <button (click)="showProduct(watch.name)">Show Product</button>
+          <button (click)="addToCart(watch.name)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>

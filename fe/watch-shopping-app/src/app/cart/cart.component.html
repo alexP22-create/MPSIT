@@ -1,0 +1,54 @@
+<div class="upper-bar">
+    <div class="brand">Online Shopping Platform For Watches</div>
+    <button>Go Back</button>
+  </div>
+
+<div>
+    <h2>Shopping Cart</h2>
+  
+    <!-- Section 1: Cart Items and Total Details -->
+    <div>
+      <h3>Cart Items</h3>
+      <ul>
+        <li *ngFor="let item of cartItems">{{ item }}</li>
+      </ul>
+  
+      <!-- Total Price and Expected Delivery Time -->
+      <div>
+        <label>Total Price:</label>
+        <span>{{ totalPrice }}</span>
+      </div>
+  
+      <div>
+        <label>Expected Delivery Time:</label>
+        <span>{{ expectedDeliveryTime }}</span>
+      </div>
+    </div>
+  
+    <!-- Section 2: Checkout Form -->
+    <div>
+      <h3>Checkout</h3>
+      <form (submit)="checkout()">
+        <!-- Phone Number -->
+        <div>
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required>
+        </div> 
+
+        <!-- Address -->
+        <div>
+          <label for="address">Address:</label>
+          <textarea id="text" name="address" [(ngModel)]="address" required></textarea>
+        </div>
+
+        <div class="success-message" *ngIf="commandRegistered">
+          <p>Command was registered!</p>
+        </div>
+  
+        <!-- Checkout Button -->
+        <div>
+          <button type="submit">Checkout</button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+<div class="upper-bar">
+  <div class="brand">Online Shopping Platform For Watches</div>
+  <button>Go Back</button>
+</div>
+
+<div class="product-container">
+  <img class="product-image" [src]="imageUrl" alt="{{ name }} Image">
+  <div class="product-details">
+    <h2 class="product-name">{{ name }}</h2>
+    <p class="product-description">{{ description }}</p>
+    <p class="product-price">Price: ${{ price.toFixed(2) }}</p>
+    <p class="product-delivery-time">Delivery Time: {{ deliveryTime }} days</p>
+    <p class="product-stock">In Stock: {{ nrInStock }}</p>
+  </div>
+</div>
+
+<button (click)="toggleEditForm()" class="button">Update Product</button>
+
+<!-- Form for updating product info -->
+<div *ngIf="showEditForm" class="form-container" >
+  <form (ngSubmit)="updateProductInfo(updateProductForm)" #updateProductForm="ngForm">
+    <label for="price">Price:</label>
+    <input type="number" name="price" [(ngModel)]="editPrice" required>
+
+    <label for="nrInStock">In Stock:</label>
+    <input type="number" name="nrInStock" [(ngModel)]="editNrInStock" required>
+
+    <label for="deliveryTime">Delivery Time:</label>
+    <input type="number" name="deliveryTime" [(ngModel)]="editDeliveryTime" required>
+
+    <label for="description">Description:</label>
+    <textarea name="description" [(ngModel)]="editDescription" required></textarea>
+
+    <button type="submit">Update!</button>
+  </form>
+
+  <div *ngIf="sendForm" class="success-message">
+    Product Successfully Updated!
+  </div>
+</div>

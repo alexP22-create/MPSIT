@@ -1,0 +1,13 @@
+<div class="upper-bar">
+    <div class="brand">Online Shopping Platform For Watches</div>
+    <button (click)="goBack()">Go Back</button>
+  </div>
+
+<div class="user-info">
+    <h2>{{ user.username }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>About Me: {{ user.aboutMe }}</p>
+    <p>Favorite Watch: {{ user.favoriteWatch }}</p>
+    <p>My Budget: {{ user.myBudget | currency }}</p>
+    <p>Role: {{ user.role }}</p>
+  </div>
